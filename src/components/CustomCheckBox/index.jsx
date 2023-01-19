@@ -1,11 +1,12 @@
 import { useState } from "react"
 
-const CustomCheckBox = ({ task }) => {
+function CustomCheckBox({ onChangeCheckValue, task, index }) {
   const {description, checked} = task;
   const [ischecked, setChecked] = useState(checked);
 
   const handleChange = () => {
     setChecked(!ischecked);
+    onChangeCheckValue(task, index)
   };
 
   return(

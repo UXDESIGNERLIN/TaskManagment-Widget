@@ -1,10 +1,10 @@
 import AccordionItem from "../AccordionItem";
 
-const Accordion = ({ items }) => {
-  console.log('render accordion', items)
+function Accordion({ tasks }) {
+
   return (
     <div>
-      {items.map((item, index) => (<AccordionItem key={index} item={item} />))}
+      {tasks.map((task, index) => (<AccordionItem key={index} item={task} />))}
     </div>
   )
 }

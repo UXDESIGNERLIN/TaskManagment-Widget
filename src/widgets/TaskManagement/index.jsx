@@ -4,9 +4,8 @@ import Accordion from "../../components/Accordion"
 import ProgressBar from "../../components/ProgressBar"
 import { Container } from "./style"
 
-const TaskManagement = ({ header }) => {
-  const [items, setItems] = useState([]);
-
+function TaskManagement({ header }) {
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     fetchAccordion();
@@ -16,7 +15,7 @@ const TaskManagement = ({ header }) => {
     try {
       let response = await fetch(TASK_API);
       let data = await response.json();
-      setItems(data);
+      setTasks(data);
       
     } catch(error) {
       console.log(`Error: ${error}`);
@@ -26,8 +25,8 @@ const TaskManagement = ({ header }) => {
   return(
   <Container>
     <h1>{header}</h1>
-    <ProgressBar />
-    <Accordion items={items}/>
+    <ProgressBar tasks={tasks}/>
+    <Accordion tasks={tasks}/>
   </Container>
   )
 }

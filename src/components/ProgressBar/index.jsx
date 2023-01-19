@@ -1,5 +1,5 @@
 import { Progress, Bar } from './style'
-const ProgressBar = ({ tasks }) => {
+function ProgressBar({ tasks }) {
 
   const sumValues = (data, sumCheckedOnly) => {
     return data.reduce((total, category) => {
