@@ -1,31 +1,27 @@
 import { Progress, Bar } from './style'
 const ProgressBar = ({ tasks }) => {
 
-  const sumAllValues = (data) => {
+  const sumValues = (data, sumCheckedOnly) => {
     return data.reduce((total, category) => {
       return total + category.tasks.reduce((subTotal, task) => {
-        return subTotal + task.value;
-      }, 0)
-    }, 0) 
-  }
-
-  const sumCheckedValues = (data) => {
-    return data.reduce((total, category) => {
-      return total + category.tasks.reduce((subTotal, task) => {
-        return task.checked ? subTotal + task.value : subTotal;
+        if(sumCheckedOnly) {
+          return task.checked ? subTotal + task.value : subTotal;
+        }
+        else return subTotal + task.value;
       }, 0);
     }, 0);
   }
+  
+  const sumAllValues = sumValues(tasks);
+
+  const sumCheckedValues = sumValues(tasks, true);
 
   const progress = ((sumCheckedValues * 100) / sumAllValues).toFixed(2);
-
-
-
 
   return(
     <>
     <Progress>
-      <Bar role="progressbar" percentage={percentage} aria-valuenow={percentage} aria-valuemin="0" aria-valuemax="100">25</Bar>
+      <Bar role="progressbar" progress={progress} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">{progress}%</Bar>
     </Progress>
     </>
   )

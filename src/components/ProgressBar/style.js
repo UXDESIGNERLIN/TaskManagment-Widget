@@ -15,7 +15,7 @@ export const Progress = styled.div`
 
 export const Bar = styled.div`
     padding: 5px;
-    width: ${({ percentage }) => percentage}%;
+    width: ${({ progress }) => progress}%;
     display: flex;
     flex-direction: column;
     justify-content: center;
