@@ -1,12 +1,14 @@
 import { useState } from "react"
 
-function CustomCheckBox({ onChangeCheckValue, task, index }) {
-  const {description, checked} = task;
-  const [ischecked, setChecked] = useState(checked);
+function CustomCheckBox({ task, toggleCheckbox, index }) {
+  const {description} = task;
+  const [onChangedTask, setOnChangedTask] = useState(task);
 
   const handleChange = () => {
-    setChecked(!ischecked);
-    onChangeCheckValue(task, index)
+    setOnChangedTask(prevTask => {
+      toggleCheckbox({...prevTask, checked: !prevTask.checked}, index);
+      return {...prevTask, checked: !prevTask.checked};
+    }); 
   };
 
   return(
@@ -14,7 +16,7 @@ function CustomCheckBox({ onChangeCheckValue, task, index }) {
       <label>
         <input 
           type="checkbox" 
-          checked={ischecked}
+          checked={onChangedTask.checked}
           onChange={handleChange}
         />
         {description}
