@@ -1,12 +1,8 @@
 import AccordionItem from "../AccordionItem";
 
-function Accordion({ tasks }) {
+function Accordion({ children }) {
 
-  return (
-    <div>
-      {tasks.map((task, index) => (<AccordionItem key={index} item={task} />))}
-    </div>
-  )
+  return <div>{children}</div>
 }
 
 export default Accordion;
