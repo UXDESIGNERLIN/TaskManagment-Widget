@@ -19,11 +19,16 @@ function ProgressBar({ tasks }) {
   const progress = ((sumCheckedValues * 100) / sumAllValues).toFixed(2);
 
   return(
-    <>
     <Progress>
-      <Bar role="progressbar" progress={progress} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100">{progress}%</Bar>
+      <Bar 
+        role="progressbar" 
+        progress={progress} 
+        aria-valuenow={progress} 
+        aria-valuemin="0" 
+        aria-valuemax="100">
+        {progress}%
+      </Bar>
     </Progress>
-    </>
   )
 }
 

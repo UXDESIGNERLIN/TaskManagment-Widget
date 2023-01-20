@@ -12,15 +12,15 @@ export const Progress = styled.div`
 `
 
 export const Bar = styled.div`
-    padding: 5px;
-    width: ${({ progress }) => progress}%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    color: ${colors.brightDefault};
-    text-align: center;
-    white-space: nowrap;
-    background-color: ${colors.primary};;
-    transition: width .6s ease;
+  padding: 5px;
+  width: ${({ progress }) => progress}%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: ${colors.brightDefault};
+  text-align: center;
+  white-space: nowrap;
+  background-color: ${colors.primary};
+  transition: width .6s ease;
 `
