@@ -4,7 +4,8 @@
 
 You can play around with the application here: [Task management widget](https://taskmanager-widget.herokuapp.com/)
 
-Here is the screenshot of the project: <img width="589" alt="image" src="https://user-images.githubusercontent.com/42298152/213693946-a2494592-9f04-4a9c-9f51-6025f6f54e66.png">
+Here is the screenshot of the project: <img width="300" alt="image" src="https://user-images.githubusercontent.com/42298152/213694114-3d5bd732-a219-4337-a1a0-6909ac7df0d9.png">
+
 
 
 ### 🛠️How to set up the project
