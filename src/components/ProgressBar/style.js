@@ -8,7 +8,7 @@ export const Progress = styled.div`
   height: 1rem
   overflow: hidden;
   font-size: .75rem;
-  background-color: black;
+  background-color: #f3fbfa;
   border-radius: 0.25rem;
   width: 50%;
 `

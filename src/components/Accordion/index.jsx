@@ -1,8 +1,7 @@
-import AccordionItem from "../AccordionItem";
+import { Container } from './style';
 
 function Accordion({ children }) {
-
-  return <div>{children}</div>
+  return <Container>{children}</Container>
 }
 
 export default Accordion;

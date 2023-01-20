@@ -60,7 +60,6 @@ function TaskManagement({ header }) {
             itemIndex={index} 
             item={item}
           >
-            <h2>{item.name}</h2>
             {item.tasks.map((task, index) => (
               <CustomCheckBox 
                 key={index} 
