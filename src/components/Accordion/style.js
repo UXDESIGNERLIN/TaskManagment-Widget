@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
+import { colors } from '../../styles/variables'
 
 export const Container = styled.ul`
+  margin-top: 3rem;
+  padding: 0;
+  width: 100%;
   list-style-type: none;
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 80%;
+  border: 1px solid ${colors.default};
+  border-radius: 25px;
 `

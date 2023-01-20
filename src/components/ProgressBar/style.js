@@ -1,16 +1,14 @@
-//#f3fbfa
-//#4cb393
-// how to make variable
 import styled from '@emotion/styled';
+import { colors } from '../../styles/variables'
 
 export const Progress = styled.div`
   display: flex;
   height: 1rem
   overflow: hidden;
   font-size: .75rem;
-  background-color: #f3fbfa;
+  background-color: ${colors.secondary};
   border-radius: 0.25rem;
-  width: 50%;
+  width: 100%;
 `
 
 export const Bar = styled.div`
@@ -20,9 +18,9 @@ export const Bar = styled.div`
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    color: #fff;
+    color: ${colors.brightDefault};
     text-align: center;
     white-space: nowrap;
-    background-color: #4cb393;
+    background-color: ${colors.primary};;
     transition: width .6s ease;
 `

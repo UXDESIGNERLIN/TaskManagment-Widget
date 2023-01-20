@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Title, Wrapper, Pannel } from './style';
+import { Title, Wrapper, Pannel, ClickingPannel, Arrow } from './style';
 
-function AccordionItem({ children, item, itemIndex }) {
+function AccordionItem({ children, item }) {
   const [expand, setExpand] = useState(false);
   const { tasks, name } = item;
 
@@ -15,13 +15,10 @@ function AccordionItem({ children, item, itemIndex }) {
 
   return ( 
     <Wrapper>
-      <button onClick={togglePannel}>
-        {allTasksChecked ? 
-          <Title>{name}</Title> : 
-          <h3>{name}</h3>
-        }
-        <span>{expand ? 'Show' : 'Hide'}</span>
-      </button>
+      <ClickingPannel onClick={togglePannel}>
+        <Title allTasksChecked={allTasksChecked}>{name}</Title> 
+        <Arrow expand={expand}></Arrow>
+      </ClickingPannel>
       <Pannel expand={expand}>{children}</Pannel>
     </Wrapper>
   ) 

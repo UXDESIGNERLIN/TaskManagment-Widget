@@ -1,7 +1,14 @@
 import styled from '@emotion/styled';
+import { colors } from '../../styles/variables'
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  margin: 1rem;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 2rem;
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  border: 1px solid ${colors.default}; 
+  border-radius: 25px;
 `
