@@ -7,6 +7,7 @@ import ProgressBar from "../../components/ProgressBar"
 import { Container } from "./style"
 
 function TaskManagement({ header }) {
+  const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -21,6 +22,9 @@ function TaskManagement({ header }) {
       
     } catch(error) {
       console.log(`Error: ${error}`);
+    }
+    finally {
+      setLoading(false)
     }
   } 
   
@@ -52,27 +56,33 @@ function TaskManagement({ header }) {
   return(
     <Container>
       <h1>{header}</h1>
-      <ProgressBar tasks={data}/>
-      <Accordion>
-        {data.map((item, index) => (
-          <AccordionItem 
-            key={index} 
-            itemIndex={index} 
-            item={item}
-          >
-            {item.tasks.map((task, index) => (
-              <CustomCheckBox 
+      {isLoading ? (
+        <div>LOADING...</div>
+      ) : (
+        <>
+          <ProgressBar tasks={data}/>
+          <Accordion>
+            {(data || []).map((item, index) => (
+              <AccordionItem 
                 key={index} 
-                taskIndex={index} 
-                item={item} 
-                task={task} 
-                toggleCheckbox={toggleCheckbox}
+                itemIndex={index} 
+                item={item}
               >
-              </CustomCheckBox>
+                {item.tasks.map((task, index) => (
+                  <CustomCheckBox 
+                    key={index} 
+                    taskIndex={index} 
+                    item={item} 
+                    task={task} 
+                    toggleCheckbox={toggleCheckbox}
+                  >
+                  </CustomCheckBox>
+                ))}
+              </AccordionItem>
             ))}
-          </AccordionItem>
-        ))}
-      </Accordion>
+          </Accordion>
+        </>
+      )}
     </Container>
   )
 }
