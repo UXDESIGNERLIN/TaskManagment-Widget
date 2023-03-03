@@ -2,7 +2,8 @@
 
 ### ⚙️Task Management Widget
 
-You can play around with the application here: [Task management widget](https://taskmanager-widget.herokuapp.com/)
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/42298152/221206182-c3f2581e-d716-4314-ac44-2fc55b5044fd.png">
 
 ### 🛠️How to set up the project
 
@@ -10,7 +11,7 @@ After cloning the project, do `npm install` and `npm run start`, you will see th
 
 ### 🤖Tech stack
 
-I use React and emotion mainly for the application.
+This project uses React and emotion mainly for the application.
 Due to the simple logic and the components structure at this stage, I use component composition approach for sharing the state around so component such as `CustomCheckBox` doesn't have to pass data to other components to know whether it is checked or not.
 
 ### 🧵Project structure
